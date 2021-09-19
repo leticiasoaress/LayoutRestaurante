@@ -1,0 +1,74 @@
+﻿@model LayoutRestaurante.Models.VW_ListaInformacao
+@{
+    ViewBag.Title = "Adicionar Itens";
+}
+
+<div class="row">
+    <div class="col-md-12" style="margin-top:5%">
+        <h4>Adicione os itens ao seu pedido!</h4>
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <h4>Comanda Eletronica</h4>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <h4>Informações do Cliente</h4>
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    @Html.LabelFor(model => model.CPF, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CPF, new { htmlAttributes = new { @class = "form-control cpf", @readonly = "readonly" } })
+                    </div>
+                </div>
+                <div class="col-md-4 form-group">
+                    @Html.LabelFor(model => model.NOME, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NOME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                </div>
+                <div class="col-md-4 form-group">
+                    @Html.LabelFor(model => model.DT_NASCIMENTO, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DT_NASCIMENTO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="col-md-12">
+            <h4>Informações do Pedido</h4>
+            <div class="row">
+                <div class="col-md-5 form-group">
+                    @Html.LabelFor(model => model.ID_PEDIDO, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ID_PEDIDO, new { htmlAttributes = new { @class = "form-control cpf", @readonly = "readonly" } })
+                    </div>
+                </div>
+
+                <div class="col-md-2 form-group">
+                    @Html.LabelFor(model => model.NR_MESA, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.NR_MESA, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                </div>
+
+                <div class="col-md-5 form-group">
+                    @Html.LabelFor(model => model.DT_CREATE, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DT_CREATE, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="col-md-12">
+        @Html.Action("Create")
+    </div>
+    <hr />
+    <div class="col-md-12">
+        @Html.Action("ListaItens")
+    </div>
+</div>

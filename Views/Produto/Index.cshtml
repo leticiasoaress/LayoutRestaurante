@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LayoutRestaurante.Models.Produto>
+
+@{
+    ViewBag.Title = "Cardápio";
+}
+
+<div class="row">
+    <div class="col-md-12" style="margin-top:5%">
+        <h4>Veja nossos produtos de forma rápida!</h4>
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <h4>Cardápio</h4>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 table-responsive">
+            <h4>Bebidas</h4>
+            @Html.Action("ListaBedidas", "Produto")
+        </div>
+        <hr />
+
+        <div class="col-md-12 table-responsive">
+            <h4>Lanches</h4>
+            @Html.Action("ListaLanches", "Produto")
+        </div>
+
+        <hr />
+        <div class="col-md-12 table-responsive">
+            <h4>Acressimos</h4>
+            @Html.Action("ListaAcressimos", "Produto")
+        </div>
+    </div>
+</div>
+

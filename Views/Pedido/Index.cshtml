@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LayoutRestaurante.Models.Pedido>
+
+@{
+    ViewBag.Title = "Meus Pedidos";
+}
+
+<div class="row">
+    <div class="col-md-12" style="margin-top:5%">
+        <h4>Meus Pedidos -  @ViewBag.Cliente</h4>
+    </div>
+    <div class="col-md-12" style="text-align:center">
+        <h4>@Html.ActionLink("Novo Pedido", "Create")</h4>
+    </div>
+    <div class="col-md-12 table-responsive"  style="margin-top:2%">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayName("Código Pedido")
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NR_MESA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VL_TOTAL)
+                </th>
+                <th>
+                    @Html.DisplayName("Data Pedido")
+                </th>
+                <th>
+                    @Html.DisplayName("Visualizar")
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NR_MESA)
+                    </td>
+                    <td>
+                        R$
+                        @Html.DisplayFor(modelItem => item.VL_TOTAL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DT_CREATE)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Itens", "Details", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>  
+</div>
+
+
+

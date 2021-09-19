@@ -1,0 +1,58 @@
+﻿@model LayoutRestaurante.Models.ItemPedido
+
+@{
+    ViewBag.Title = "Excluir Item";
+}
+@{
+    decimal total = 0;
+    total = (Model.VL_ITEM * Model.QTD);
+}
+<h3>Deseja realmente excluir esse item?</h3>
+<div>
+    <h4>ItemPedido</h4>
+    <hr />
+    <dl class="dl-horizontal">       
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_PEDIDO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_PEDIDO)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Produto")
+        </dt>
+
+        <dd>
+            @ViewBag.Produto
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VL_ITEM)
+        </dt>
+
+        <dd>
+         R$ @total.ToString("0.00")
+
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

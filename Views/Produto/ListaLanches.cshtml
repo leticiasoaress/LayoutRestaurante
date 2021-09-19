@@ -1,0 +1,34 @@
+﻿@model IEnumerable<LayoutRestaurante.Models.Produto>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NOME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESCRICAO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VL_PRODUTO)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESCRICAO)
+                </td>
+                <td>
+                    R$
+                    @Html.DisplayFor(modelItem => item.VL_PRODUTO)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

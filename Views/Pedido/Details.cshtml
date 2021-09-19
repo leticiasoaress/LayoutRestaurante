@@ -1,0 +1,66 @@
+﻿@model IEnumerable<LayoutRestaurante.Models.VW_ListaItem>
+
+@{
+    ViewBag.Title = "Itens Pedido";
+    double tot = 0.00;
+}
+
+<div class="row">
+    <div class="col-md-12" style="margin-top:5%; text-align:center">
+        <h4>Itens do Pedido</h4>
+    </div>
+    <div class="col-md-12 table-responsive" style="margin-top:2%">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID_PEDIDO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PRODUTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VL_PRODUTO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QTD_PEDIDO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VALORTOTAL)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_PEDIDO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PRODUTO)
+                    </td>
+                    <td>
+                        R$
+                        @Html.DisplayFor(modelItem => item.VL_PRODUTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QTD_PEDIDO)
+                    </td>
+                    <td>
+                        @{ tot += Convert.ToDouble(item.VALORTOTAL);}
+                        R$
+                        @Html.DisplayFor(modelItem => item.VALORTOTAL)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 form-group">
+        @Html.Label("Total do Pedido: ", htmlAttributes: new { @class = "col-md-2" })
+        <div class="col-md-8">
+            @Html.Label("VlTotal", "R$ " + tot.ToString("0.00"), new { @class = "col-md-2" })
+        </div>
+    </div>
+</div>

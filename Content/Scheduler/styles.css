@@ -1,0 +1,28 @@
+﻿.toolTipPanel {
+   box-shadow: 3px 3px 20px Gray;
+   background-color: White;
+   width: 300px;
+}
+.toolTipPanelHeader {
+   padding-right: 8px !important;
+}
+.toolTipPanel .dxrpHeader_Metropolis,
+.toolTipPanel .dxrpHeader_MetropolisBlue {
+    border-bottom: 1px solid rgba(192, 192, 192, 1);
+}
+.toolTipLablel {
+    color:Black;
+    font-family:Tahoma;
+    font-size:10pt;
+}
+.dxrpHeader_BlackGlass .toolTipLablel,
+.dxrpHeader_RedWine .toolTipLablel {
+    color:White;
+}
+.toolTipCloseButton {
+    float:right;
+}
+.toolTipButton {
+    float:right;
+    margin: 5px 0px 6px 5px;
+}

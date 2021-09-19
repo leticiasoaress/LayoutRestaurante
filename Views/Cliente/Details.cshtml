@@ -1,0 +1,43 @@
+﻿@model LayoutRestaurante.Models.Cliente
+
+<div>
+    <h4>Informações do Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DT_NASCIMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DT_NASCIMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEXO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEXO)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
